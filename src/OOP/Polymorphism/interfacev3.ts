@@ -34,3 +34,22 @@ class Dog implements Animal {
     console.log("Woof!");
   }
 }
+
+// -->> 
+interface Payment {
+  amount: number;
+}
+
+interface OnlinePayment extends Payment {
+  gateway: string;
+}
+
+class StripePayment implements OnlinePayment {
+  amount: number;
+  gateway: string;
+
+  constructor(amount: number) {
+    this.amount = amount;
+    this.gateway = "Stripe";
+  }
+}
